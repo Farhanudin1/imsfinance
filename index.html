@@ -1,96 +1,819 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMS Finance — Kalkulator Kredit Kendaraan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #D62B2B;
+    --red-light: #F5E5E5;
+    --red-dark: #9E1F1F;
+    --ink: #0E0E0E;
+    --ink-60: rgba(14,14,14,0.6);
+    --ink-20: rgba(14,14,14,0.12);
+    --cream: #FAF8F4;
+    --white: #FFFFFF;
+    --gold: #C9A84C;
+    --card-bg: #FFFFFF;
+    --border: rgba(14,14,14,0.1);
+    --shadow: 0 2px 32px rgba(14,14,14,0.08);
+    --radius: 16px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem;
+    height: 68px;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 20px; letter-spacing: -0.02em;
+    text-decoration: none; color: var(--ink);
+  }
+  .nav-logo-box {
+    width: 34px; height: 34px;
+    background: var(--red);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 14px; font-weight: 800;
+  }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a {
+    text-decoration: none; color: var(--ink-60);
+    font-size: 14px; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    background: var(--ink) !important; color: white !important;
+    padding: 8px 20px; border-radius: 100px;
+    font-weight: 500 !important; font-size: 14px !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--red) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    padding-top: 68px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 3rem 5rem 3rem;
+    position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--red-light); color: var(--red-dark);
+    padding: 6px 14px; border-radius: 100px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 4.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 span { color: var(--red); }
+  .hero p {
+    font-size: 16px; line-height: 1.7;
+    color: var(--ink-60);
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; align-items: center; gap: 12px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--red); color: white;
+    padding: 14px 28px; border-radius: 100px;
+    font-size: 15px; font-weight: 500;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--ink);
+    padding: 14px 28px; border-radius: 100px;
+    font-size: 15px; font-weight: 500;
+    border: 1.5px solid var(--border);
+    text-decoration: none; cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+    display: inline-flex; align-items: center;
+  }
+  .btn-outline:hover { border-color: var(--ink); transform: translateY(-1px); }
+
+  .hero-stats {
+    display: flex; gap: 2rem; margin-top: 3.5rem;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .hero-stat { }
+  .hero-stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem; font-weight: 800; line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .hero-stat-num span { color: var(--red); }
+  .hero-stat-label { font-size: 12px; color: var(--ink-60); margin-top: 4px; }
+
+  .hero-right {
+    position: relative; overflow: hidden;
+    background: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 40%, rgba(214,43,43,0.35) 0%, transparent 65%);
+  }
+  .hero-visual {
+    position: relative; z-index: 2;
+    padding: 3rem;
+    width: 100%;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    animation: slideIn 0.7s 0.2s ease both;
+  }
+  .hero-card-label {
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45); margin-bottom: 0.5rem;
+  }
+  .hero-card-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem; font-weight: 800;
+    color: white; letter-spacing: -0.04em;
+    margin-bottom: 0.25rem;
+  }
+  .hero-card-sub { font-size: 13px; color: rgba(255,255,255,0.5); }
+  .hero-card-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 1.25rem 0; }
+  .hero-card-row {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .hero-card-row:last-child { margin-bottom: 0; }
+  .hero-card-key { font-size: 13px; color: rgba(255,255,255,0.5); }
+  .hero-card-val { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.9); }
+  .badge-rate {
+    background: rgba(214,43,43,0.25); color: #FF8080;
+    padding: 3px 10px; border-radius: 100px;
+    font-size: 12px; font-weight: 500;
+  }
+  .hero-bg-text {
+    position: absolute; bottom: -10px; left: 0; right: 0;
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 10rem; line-height: 1;
+    color: rgba(255,255,255,0.03);
+    text-align: center;
+    letter-spacing: -0.05em;
+    user-select: none; pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .section {
+    padding: 6rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 1rem;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 24px; height: 2px;
+    background: var(--red);
+  }
+  .section h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+  .section-sub { font-size: 16px; color: var(--ink-60); line-height: 1.7; max-width: 500px; }
+
+  /* flow steps */
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 3rem;
+    position: relative;
+  }
+  .flow-grid::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: calc(12.5% + 14px); right: calc(12.5% + 14px);
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--ink-20) 0, var(--ink-20) 6px, transparent 6px, transparent 12px);
+  }
+  .flow-step {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; padding: 0 1rem;
+  }
+  .flow-num {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 18px;
+    margin-bottom: 1.25rem;
+    position: relative; z-index: 1;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .flow-step:hover .flow-num {
+    background: var(--red); color: white; border-color: var(--red);
+  }
+  .flow-step-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 15px;
+    margin-bottom: 0.5rem;
+  }
+  .flow-step-desc { font-size: 13px; color: var(--ink-60); line-height: 1.6; }
+
+  /* rate cards */
+  .rates-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; margin-top: 3rem;
+  }
+  .rate-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .rate-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .rate-card.featured { border-color: var(--red); border-width: 2px; }
+  .rate-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red-light);
+  }
+  .rate-card.featured::before { background: var(--red); }
+  .rate-tenure { font-size: 13px; color: var(--ink-60); margin-bottom: 0.5rem; }
+  .rate-pct {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem; font-weight: 800;
+    letter-spacing: -0.04em; line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .rate-pct span { font-size: 1.5rem; color: var(--red); }
+  .rate-desc { font-size: 13px; color: var(--ink-60); line-height: 1.6; margin-top: 0.75rem; }
+  .rate-badge {
+    position: absolute; top: 1.25rem; right: 1.25rem;
+    background: var(--red); color: white;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 100px;
+  }
+
+  /* ── CALCULATOR ── */
+  .calc-section {
+    background: var(--ink);
+    padding: 6rem 3rem;
+    position: relative; overflow: hidden;
+  }
+  .calc-section::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(214,43,43,0.2) 0%, transparent 70%);
+  }
+  .calc-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+    position: relative; z-index: 2;
+  }
+  .calc-left .section-label { color: #FF8080; }
+  .calc-left .section-label::before { background: #FF8080; }
+  .calc-left h2 { color: white; }
+  .calc-left .section-sub { color: rgba(255,255,255,0.5); }
+
+  /* form */
+  .calc-form { margin-top: 2.5rem; }
+  .form-group { margin-bottom: 1.5rem; }
+  .form-label {
+    display: block; font-size: 13px; font-weight: 500;
+    color: rgba(255,255,255,0.6); margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+  .input-wrap { position: relative; }
+  .input-prefix {
+    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    font-size: 14px; color: rgba(255,255,255,0.4);
+    pointer-events: none;
+  }
+  .form-input {
+    width: 100%; height: 50px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-sm);
+    padding: 0 14px 0 40px;
+    font-size: 15px; font-weight: 500;
+    color: white; font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s;
+    -moz-appearance: textfield;
+  }
+  .form-input::-webkit-outer-spin-button,
+  .form-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+  .form-input:focus { outline: none; border-color: var(--red); background: rgba(255,255,255,0.1); }
+  .form-input.no-prefix { padding-left: 14px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-hint { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 5px; }
+
+  /* slider */
+  .slider-wrap { margin-top: 0.5rem; }
+  input[type=range] {
+    width: 100%; height: 4px;
+    -webkit-appearance: none; appearance: none;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px; cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; height: 20px;
+    background: var(--red); border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s;
+  }
+  input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+  .slider-labels { display: flex; justify-content: space-between; margin-top: 6px; }
+  .slider-labels span { font-size: 11px; color: rgba(255,255,255,0.3); }
+  .slider-value-display {
+    text-align: center; margin-bottom: 8px;
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 1.75rem; color: white; letter-spacing: -0.02em;
+  }
+  .slider-value-display small { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.5); margin-left: 6px; font-family: 'DM Sans', sans-serif; }
+
+  .calc-btn-main {
+    width: 100%; height: 52px;
+    background: var(--red); color: white;
+    border: none; border-radius: var(--radius-sm);
+    font-size: 16px; font-weight: 600;
+    cursor: pointer; margin-top: 0.75rem;
+    transition: background 0.2s, transform 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .calc-btn-main:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  /* result panel */
+  .result-panel {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    position: sticky; top: 88px;
+  }
+  .result-header { margin-bottom: 1.5rem; }
+  .result-main-label { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 0.25rem; }
+  .result-main-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 3.5rem; font-weight: 800;
+    color: white; letter-spacing: -0.04em; line-height: 1;
+  }
+  .result-main-sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 0.25rem; }
+  .result-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 1.25rem 0; }
+  .result-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 0;
+  }
+  .result-row-key { font-size: 14px; color: rgba(255,255,255,0.5); }
+  .result-row-val { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.9); }
+  .result-row-val.accent { color: #FF8080; }
+  .bunga-badge-display {
+    background: rgba(214,43,43,0.3); color: #FF8080;
+    padding: 3px 10px; border-radius: 100px;
+    font-size: 13px; font-weight: 600;
+  }
+
+  /* schedule table */
+  .schedule-wrap {
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.25rem;
+  }
+  .schedule-title {
+    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-bottom: 0.75rem;
+  }
+  .schedule-scroll {
+    max-height: 220px; overflow-y: auto;
+  }
+  .schedule-scroll::-webkit-scrollbar { width: 3px; }
+  .schedule-scroll::-webkit-scrollbar-track { background: transparent; }
+  .schedule-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+  .sched-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .sched-table th {
+    padding: 5px 8px; text-align: left;
+    color: rgba(255,255,255,0.35); font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .sched-table td {
+    padding: 6px 8px; color: rgba(255,255,255,0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .sched-table tr:last-child td { border-bottom: none; }
+  .sched-table td:last-child { text-align: right; color: rgba(255,255,255,0.9); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 3rem;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 22px; color: white; letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .footer-logo span { color: var(--red); }
+  .footer-sub { font-size: 13px; color: rgba(255,255,255,0.3); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); margin-top: 1.5rem; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 4rem 1.5rem 4rem; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .section { padding: 4rem 1.5rem; }
+    .flow-grid { grid-template-columns: 1fr 1fr; row-gap: 2rem; }
+    .flow-grid::before { display: none; }
+    .rates-grid { grid-template-columns: 1fr; }
+    .calc-section { padding: 4rem 1.5rem; }
+    .calc-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .result-panel { position: static; }
+    .form-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-box">IMS</div>
+    IMS Finance
+  </a>
+  <div class="nav-links">
+    <a href="#cara-kerja">Cara Kerja</a>
+    <a href="#bunga">Suku Bunga</a>
+    <a href="#kalkulator">Kalkulator</a>
+    <a href="#kalkulator" class="nav-cta">Ajukan Sekarang</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      IMS Finance — Kredit Kendaraan
+    </div>
+    <h1>Miliki Kendaraan<br>Impian Anda<br><span>Hari Ini</span></h1>
+    <p>Proses kredit transparan, cicilan terjangkau, dan bunga kompetitif. Simulasikan angsuran Anda dalam hitungan detik.</p>
+    <div class="hero-actions">
+      <a href="#kalkulator" class="btn-primary">
+        Hitung Cicilan
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#cara-kerja" class="btn-outline">Pelajari Lebih Lanjut</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">12<span>%</span></div>
+        <div class="hero-stat-label">Bunga mulai dari</div>
+      </div>
+      <div class="hero-stat" style="padding-left:2rem;border-left:1px solid var(--border)">
+        <div class="hero-stat-num">48<span>bln</span></div>
+        <div class="hero-stat-label">Tenor maksimal</div>
+      </div>
+      <div class="hero-stat" style="padding-left:2rem;border-left:1px solid var(--border)">
+        <div class="hero-stat-num">20<span>%</span></div>
+        <div class="hero-stat-label">DP minimum</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-label">Simulasi — AGR00001</div>
+        <div class="hero-card-value">Rp 12.907.000</div>
+        <div class="hero-card-sub">Per bulan · 18 bulan tenor</div>
+        <div class="hero-card-divider"></div>
+        <div class="hero-card-row">
+          <span class="hero-card-key">Harga OTR</span>
+          <span class="hero-card-val">Rp 240.000.000</span>
+        </div>
+        <div class="hero-card-row">
+          <span class="hero-card-key">Down Payment (20%)</span>
+          <span class="hero-card-val">Rp 48.000.000</span>
+        </div>
+        <div class="hero-card-row">
+          <span class="hero-card-key">Pokok Utang</span>
+          <span class="hero-card-val">Rp 192.000.000</span>
+        </div>
+        <div class="hero-card-row">
+          <span class="hero-card-key">Suku Bunga</span>
+          <span class="badge-rate">14%</span>
+        </div>
+        <div class="hero-card-row">
+          <span class="hero-card-key">Nama Klien</span>
+          <span class="hero-card-val">SUGUS</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bg-text">KREDIT</div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="cara-kerja">
+  <div class="section">
+    <div class="section-label">Cara Kerja</div>
+    <h2>Proses Perhitungan<br>yang Transparan</h2>
+    <p class="section-sub">Angsuran dihitung berdasarkan flowchart resmi IMS Finance dengan formula yang jelas dan terstandar.</p>
+    <div class="flow-grid">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-step-title">Input Data</div>
+        <div class="flow-step-desc">Masukkan harga OTR, Down Payment, dan jangka waktu kredit yang diinginkan</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-step-title">Pokok Utang</div>
+        <div class="flow-step-desc">Dihitung dari OTR dikurangi DP yang telah dibayarkan di muka</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-step-title">Tentukan Bunga</div>
+        <div class="flow-step-desc">Sistem otomatis memilih suku bunga berdasarkan tenor yang dipilih</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-step-title">Angsuran Bulanan</div>
+        <div class="flow-step-desc">(Pokok + Pokok × Bunga) dibagi jumlah bulan tenor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATES -->
+<section id="bunga" style="background: var(--white); padding: 0;">
+  <div class="section">
+    <div class="section-label">Suku Bunga</div>
+    <h2>Pilih Tenor yang<br>Sesuai Kebutuhan</h2>
+    <p class="section-sub">Tiga pilihan tenor dengan suku bunga flat yang kompetitif dan transparan.</p>
+    <div class="rates-grid">
+      <div class="rate-card">
+        <div class="rate-tenure">Tenor 1 – 12 Bulan</div>
+        <div class="rate-pct">12<span>%</span></div>
+        <div class="rate-desc">Ideal untuk cicilan jangka pendek. Beban bunga paling ringan dengan pelunasan lebih cepat.</div>
+      </div>
+      <div class="rate-card featured">
+        <div class="rate-badge">Populer</div>
+        <div class="rate-tenure">Tenor 13 – 24 Bulan</div>
+        <div class="rate-pct">14<span>%</span></div>
+        <div class="rate-desc">Pilihan paling umum. Keseimbangan sempurna antara cicilan bulanan dan total bunga yang dibayar.</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-tenure">Tenor > 24 Bulan</div>
+        <div class="rate-pct">16.5<span>%</span></div>
+        <div class="rate-desc">Cicilan paling ringan per bulan. Cocok untuk kendaraan premium dengan harga OTR tinggi.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="kalkulator" class="calc-section">
+  <div class="calc-inner">
+    <div class="calc-left">
+      <div class="section-label">Kalkulator</div>
+      <h2 style="color:white">Simulasikan<br>Kredit Anda</h2>
+      <p class="section-sub">Isi data di bawah dan lihat angsuran bulanan Anda secara langsung.</p>
+      <div class="calc-form">
+        <div class="form-group">
+          <label class="form-label">Harga OTR Kendaraan</label>
+          <div class="input-wrap">
+            <span class="input-prefix">Rp</span>
+            <input type="number" class="form-input" id="f_otr" value="240000000" oninput="updateCalc()">
+          </div>
+          <div class="form-hint">Contoh: 240000000 untuk Rp 240 juta</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Down Payment: <strong id="dp_label" style="color:white">20% = Rp 48.000.000</strong></label>
+          <div class="slider-wrap">
+            <input type="range" id="f_dp" min="10" max="80" value="20" step="5" oninput="updateCalc()">
+            <div class="slider-labels"><span>10%</span><span>80%</span></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tenor (Jangka Waktu)</label>
+          <div class="slider-value-display" id="tenor_display">18 <small>bulan</small></div>
+          <div class="slider-wrap">
+            <input type="range" id="f_tenor" min="6" max="60" value="18" step="6" oninput="updateCalc()">
+            <div class="slider-labels"><span>6 bln</span><span>60 bln</span></div>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">Tanggal Jatuh Tempo</label>
+            <input type="date" class="form-input no-prefix" id="f_tgl" value="2024-01-25" oninput="updateCalc()" style="padding-left:14px">
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">No. Kontrak</label>
+            <input type="text" class="form-input no-prefix" id="f_kontrak" value="AGR00001" style="padding-left:14px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-right">
+      <div class="result-panel">
+        <div class="result-header">
+          <div class="result-main-label">Angsuran per Bulan</div>
+          <div class="result-main-value" id="r_cicilan">Rp 12.907.000</div>
+          <div class="result-main-sub" id="r_sub">18 bulan · Bunga 14%</div>
+        </div>
+        <div class="result-divider"></div>
+        <div class="result-row">
+          <span class="result-row-key">Harga OTR</span>
+          <span class="result-row-val" id="r_otr">Rp 240.000.000</span>
+        </div>
+        <div class="result-row">
+          <span class="result-row-key">Down Payment</span>
+          <span class="result-row-val" id="r_dp">Rp 48.000.000</span>
+        </div>
+        <div class="result-row">
+          <span class="result-row-key">Pokok Utang</span>
+          <span class="result-row-val" id="r_pokok">Rp 192.000.000</span>
+        </div>
+        <div class="result-row">
+          <span class="result-row-key">Suku Bunga</span>
+          <span class="bunga-badge-display" id="r_bunga">14%</span>
+        </div>
+        <div class="result-row">
+          <span class="result-row-key">Total Bunga</span>
+          <span class="result-row-val accent" id="r_total_bunga">Rp 26.880.000</span>
+        </div>
+        <div class="result-row">
+          <span class="result-row-key">Total Bayar</span>
+          <span class="result-row-val" id="r_total_bayar">Rp 218.880.000</span>
+        </div>
+        <div class="result-divider"></div>
+        <div class="schedule-wrap">
+          <div class="schedule-title">Jadwal Angsuran</div>
+          <div class="schedule-scroll">
+            <table class="sched-table">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Kontrak</th>
+                  <th>Jatuh Tempo</th>
+                  <th>Angsuran</th>
+                </tr>
+              </thead>
+              <tbody id="sched_body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">IMS<span>Finance</span></div>
+  <div class="footer-sub">PT. Inovasi Mitra Sejati — Innovation Comprehensive Technology</div>
+  <div class="footer-copy">© Agustus 2024. PT. Inovasi Mitra Sejati. CONFIDENTIAL</div>
+</footer>
+
+<script>
+function fmt(n) {
+  return 'Rp ' + Math.round(n).toLocaleString('id-ID');
+}
+function addMonths(dateStr, m) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  d.setMonth(d.getMonth() + m);
+  return d.toLocaleDateString('id-ID', { day:'2-digit', month:'short', year:'numeric' });
+}
+
+function updateCalc() {
+  const otr = parseFloat(document.getElementById('f_otr').value) || 0;
+  const dp_pct = parseFloat(document.getElementById('f_dp').value) || 0;
+  const tenor = parseInt(document.getElementById('f_tenor').value) || 0;
+  const tgl = document.getElementById('f_tgl').value;
+  const kontrak = document.getElementById('f_kontrak').value || 'AGR00001';
+
+  const dp = otr * (dp_pct / 100);
+  const pokok = otr - dp;
+
+  let bunga_pct, bunga_label;
+  if (tenor <= 12) { bunga_pct = 0.12; bunga_label = '12%'; }
+  else if (tenor <= 24) { bunga_pct = 0.14; bunga_label = '14%'; }
+  else { bunga_pct = 0.165; bunga_label = '16,5%'; }
+
+  const total_bunga = pokok * bunga_pct;
+  const cicilan = Math.round((pokok + total_bunga) / tenor);
+  const total_bayar = dp + pokok + total_bunga;
+
+  // UI
+  document.getElementById('dp_label').textContent = dp_pct + '% = ' + fmt(dp);
+  document.getElementById('tenor_display').innerHTML = tenor + ' <small>bulan</small>';
+  document.getElementById('r_cicilan').textContent = fmt(cicilan);
+  document.getElementById('r_sub').textContent = tenor + ' bulan · Bunga ' + bunga_label;
+  document.getElementById('r_otr').textContent = fmt(otr);
+  document.getElementById('r_dp').textContent = fmt(dp);
+  document.getElementById('r_pokok').textContent = fmt(pokok);
+  document.getElementById('r_bunga').textContent = bunga_label;
+  document.getElementById('r_total_bunga').textContent = fmt(total_bunga);
+  document.getElementById('r_total_bayar').textContent = fmt(total_bayar);
+
+  // hero card sync
+  document.querySelector('.hero-card-value').textContent = fmt(cicilan);
+  document.querySelector('.hero-card-sub').textContent = 'Per bulan · ' + tenor + ' bulan tenor';
+
+  // schedule
+  const tbody = document.getElementById('sched_body');
+  tbody.innerHTML = '';
+  for (let i = 0; i < tenor; i++) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${i+1}</td><td style="color:rgba(255,255,255,0.45)">${kontrak}</td><td>${addMonths(tgl, i)}</td><td>${fmt(cicilan)}</td>`;
+    tbody.appendChild(tr);
+  }
+}
+
+updateCalc();
+</script>
+</body>
 </html>
